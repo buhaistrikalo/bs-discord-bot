@@ -1,0 +1,14 @@
+{
+  "name": "bsd",
+  "version": "0.0.1",
+  "description": "Buhai Discord Bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "BuhaiStrikalo",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
+}
