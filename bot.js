@@ -1,8 +1,8 @@
 const settings = require('./botsetting.json');
 const Discord = require('discord.js');
 const prefix = settings.prefix;
-
 const bot = new Discord.Client({disableEveryone: true});
+const clear = require('./clear.js'); // Привести в нормальный вид
 
  bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
@@ -14,14 +14,14 @@ const bot = new Discord.Client({disableEveryone: true});
 
 
     let messageArray = msg.content.split(" ");
-    let cmd = messageArray[0];
+    let cmd = messageArray[0].slice(1);
     let args = messageArray.slice(1);
 
 
-    if (cmd === prefix + 'дневальный') {
+    if (cmd === 'дневальный') {
       msg.reply('ЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯ!');
     }
-    if (cmd === prefix + 'userinfo') {
+    if (cmd === 'userinfo') {
       let embed = new Discord.MessageEmbed() 
         //.setImage(msg.author.avatarURL)
         .setColor("#985986")
@@ -35,10 +35,11 @@ const bot = new Discord.Client({disableEveryone: true});
         .setFooter('Если вы заметили какое-либо нарушение правил данным игроком, напишите мне @Сухой')
       msg.channel.send(embed)
     }
-    console.log(msg.author.avatarURL)
-    /*if (cmd === prefix + 'командуй') {
-     msg.reply('Ротa, ' + args + ' !');
-    }*/
+    
+    if (cmd === 'clear'){
+      clear.execute(msg)
+    }
+    console.log(cmd)
 });
   
   bot.login(settings.token); 
