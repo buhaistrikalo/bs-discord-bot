@@ -48,6 +48,9 @@ for(const file of commandFiles){
     if (cmd === 'clear'){
       bot.commands.get('clear').execute(msg)
     }
+    if (cmd === 'ticket'){
+      bot.commands.get('ticket').execute(msg)
+    }
 });
   
   bot.login(settings.token); 
