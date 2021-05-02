@@ -4,7 +4,6 @@ module.exports = {
     async execute(message) {
         await message.channel.messages.fetch().then(messages => {
             message.channel.bulkDelete(messages);
-            console.log('working')
         })
     }
 }

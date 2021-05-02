@@ -2,7 +2,16 @@ const settings = require('./botsetting.json');
 const Discord = require('discord.js');
 const prefix = settings.prefix;
 const bot = new Discord.Client({disableEveryone: true});
-const clear = require('./clear.js'); // Привести в нормальный вид
+const fs = require('fs');
+
+bot.commands = new Discord.Collection();
+
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
+for(const file of commandFiles){
+  const command = require(`./commands/${file}`);
+  bot.commands.set(command.name, command);
+}
+
 
  bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
@@ -37,9 +46,8 @@ const clear = require('./clear.js'); // Привести в нормальный
     }
     
     if (cmd === 'clear'){
-      clear.execute(msg)
+      bot.commands.get('clear').execute(msg)
     }
-    console.log(cmd)
 });
   
   bot.login(settings.token); 
