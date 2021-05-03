@@ -1,4 +1,5 @@
 const TicketChannels = '838489626524123158'
+const role_staff = "825679323692269608";
 
 module.exports = {
     name: "ticket",
@@ -6,8 +7,8 @@ module.exports = {
     permissions: [],
     description: "open a ticket!",
     async execute(message) {
-      const channel = await message.guild.channels.create(`ticket: ${message.author.username}`);
-      const role_staff = "825679323692269608";
+      const channel = await message.guild.channels.create(`${message.author.tag}`);
+      
       channel.setParent(TicketChannels);
   
       channel.updateOverwrite(message.guild.id, {
