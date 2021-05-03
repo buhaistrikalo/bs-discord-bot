@@ -7,7 +7,7 @@ module.exports = {
     description: "open a ticket!",
     async execute(message) {
       const channel = await message.guild.channels.create(`ticket: ${message.author.username}`);
-      
+      const role_staff = "825679323692269608";
       channel.setParent(TicketChannels);
   
       channel.updateOverwrite(message.guild.id, {
@@ -15,6 +15,10 @@ module.exports = {
         VIEW_CHANNEL: false,
       });
       channel.updateOverwrite(message.author, {
+        SEND_MESSAGE: true,
+        VIEW_CHANNEL: true,
+      });
+      channel.updateOverwrite(role_staff, {
         SEND_MESSAGE: true,
         VIEW_CHANNEL: true,
       });
