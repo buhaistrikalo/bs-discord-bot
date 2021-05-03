@@ -13,14 +13,17 @@ module.exports = {
       channel.updateOverwrite(message.guild.id, {
         SEND_MESSAGE: false,
         VIEW_CHANNEL: false,
+        ADD_REACTIONS: false,
       });
       channel.updateOverwrite(message.author, {
         SEND_MESSAGE: true,
         VIEW_CHANNEL: true,
+        ADD_REACTIONS: false,
       });
       channel.updateOverwrite(role_staff, {
         SEND_MESSAGE: true,
         VIEW_CHANNEL: true,
+        ADD_REACTIONS: true,
       });
   
       const reactionMessage = await channel.send(`${message.author} Thank you for contacting support!`);
@@ -34,7 +37,7 @@ module.exports = {
       }
   
       const collector = reactionMessage.createReactionCollector(
-        (reaction, user) => message.guild.members.cache.find((member) => member.id === user.id).hasPermission("ADMINISTRATOR"),
+        (reaction, user) => message.guild.members.cache.find((member) => member.id === user.id).hasPermission("ADD_REACTIONS"),
         { dispose: true }
       );
   
