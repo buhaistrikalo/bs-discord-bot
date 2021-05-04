@@ -53,7 +53,7 @@ module.exports = {
         ADD_REACTIONS: true,
       });
   
-      const reactionMessage = await channel.send(`${message.author} Thank you for contacting support!`);
+      const reactionMessage = await channel.send(`${message.author} Thank you for contacting support! Describe your problem. We will contact you as soon as possible.`);
   
       try {
         await reactionMessage.react("🔒");

@@ -47,6 +47,9 @@ for(const file of commandFiles){
       msg.channel.send(embed)
     }
     
+    if (cmd === 'item'){
+      bot.commands.get('item').execute(Discord, msg)
+    }
     if (cmd === 'clear'){
       bot.commands.get('clear').execute(msg)
     }
