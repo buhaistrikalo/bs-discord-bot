@@ -7,8 +7,34 @@ module.exports = {
     permissions: [],
     description: "open a ticket!",
     async execute(message) {
+      let haveChannel = false;
+      message.guild.channels.cache.forEach(channel => { //Проверить создал ли уже тикет
+        try{
+          let userTag = message.author.tag.toLowerCase().split('#').join('')
+          if (channel.name == userTag) {
+            haveChannel = true;
+          }
+        } catch (err) {
+          console.log("Error");
+          throw err;
+        }
+      });
+      if (haveChannel) {
+        message
+          .reply('You have already opened a ticket')
+          .then((msg) => {
+            setTimeout(() => msg.delete(), 7000);
+            setTimeout(() => message.delete(), 3000);
+          })
+          .catch((err) => {
+            throw err;
+          });
+        return;
+      }
       const channel = await message.guild.channels.create(`${message.author.tag}`);
       
+      
+
       channel.setParent(TicketChannels);
   
       channel.updateOverwrite(message.guild.id, {

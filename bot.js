@@ -18,18 +18,20 @@ for(const file of commandFiles){
   });
   
   bot.on('message', msg => {
-    if(msg.author.bot) return; //проверка, чтобы бот не реагировал на сообщения других ботов
-    if(!msg.content.startsWith(prefix)) return; //пропускать сообщения без префикса
-
+    if(msg.author.bot || !msg.content.startsWith(prefix)) return; //проверка сообщения (не от бота и есть префикс)
 
     let messageArray = msg.content.split(" ");
     let cmd = messageArray[0].slice(1);
     let args = messageArray.slice(1);
 
 
-    if (cmd === 'дневальный') {
-      msg.reply('ЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯ!');
+    if (cmd === 'test') {
+      
+      //const channel = msg.guild.channels.cache.forEach(channel => channel.name === "ideas");
+      
+      
     }
+
     if (cmd === 'userinfo') {
       let embed = new Discord.MessageEmbed() 
         //.setImage(msg.author.avatarURL)
