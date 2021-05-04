@@ -11,6 +11,7 @@ module.exports = {
       message.guild.channels.cache.forEach(channel => { //Проверить создал ли уже тикет
         try{
           let userTag = message.author.tag.toLowerCase().split('#').join('')
+          userTag = userTag.split('.').join('')
           if (channel.name == userTag) {
             haveChannel = true;
           }
