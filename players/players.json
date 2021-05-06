@@ -6,7 +6,7 @@
         "pvp": 1300,
         "pve_raid": 4,
         "pve_dung": 0,
-        "guild": "Blacklist"
+        "clan": "Blacklist"
     },
     "385104077077479426": {
         "id": 385104077077479426,
@@ -15,6 +15,6 @@
         "pvp": 500,
         "pve_raid": 0,
         "pve_dung": 0,
-        "guild": "Blacklist"
+        "clan": "Blacklist"
     }
 }
