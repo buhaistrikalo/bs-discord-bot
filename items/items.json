@@ -4,6 +4,6 @@
     "image": "./items/energy_farmour.png",
     "tier": "2",
     "def": "14",
-    "speed": 5.5,
+    "spd": 5.5,
     "level": 55
 }

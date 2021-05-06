@@ -48,7 +48,7 @@ for(const file of commandFiles){
     }
     
     if (cmd === 'item'){
-      bot.commands.get('item').execute(Discord, msg)
+      bot.commands.get('item').execute(args)
     }
     if (cmd === 'clear'){
       bot.commands.get('clear').execute(msg)
