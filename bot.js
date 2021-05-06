@@ -35,7 +35,9 @@ for(const file of commandFiles){
     if (cmd === 'player') {
       bot.commands.get('player').execute(msg, args)
     }
-    
+    if (cmd === 'clan') {
+      bot.commands.get('clan').execute(msg, args)
+    }
     if (cmd === 'item'){
       bot.commands.get('item').execute(msg)
     }
