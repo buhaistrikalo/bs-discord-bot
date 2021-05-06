@@ -1,0 +1,16 @@
+{
+    "Blacklist": {
+        "name": "Blacklist",
+        "leader": "707162228595621988",
+        "tier": "S",
+        "bosses": "5",
+        "icon": "https://i.pinimg.com/originals/12/e4/d8/12e4d8059bcc09c0391ccf5854b68b37.png"
+    },
+    "White rabbit": {
+        "name": "White rabbit",
+        "leader": "385104077077479426",
+        "tier": "B",
+        "bosses": "0",
+        "icon": "https://png.clipart.me/istock/previews/9226/92269083-rabbit-logo-icon.jpg"
+    }
+}
