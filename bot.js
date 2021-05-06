@@ -32,23 +32,12 @@ for(const file of commandFiles){
       
     }
 
-    if (cmd === 'userinfo') {
-      let embed = new Discord.MessageEmbed() 
-        //.setImage(msg.author.avatarURL)
-        .setColor("#985986")
-        .setAuthor(msg.author.username)
-        .setDescription("Информация об игроке")
-        .addFields(
-          {name: 'PvE Raid progress', value: '10/10', inline: true}, 
-          {name: 'PvE Dungeons progress', value: 'key 13 - 13:32', inline: true},
-          {name: 'PvP Place: 3', value: 'Raiting: 2353', inline: true}
-        )
-        .setFooter('Если вы заметили какое-либо нарушение правил данным игроком, напишите мне @Сухой')
-      msg.channel.send(embed)
+    if (cmd === 'player') {
+      bot.commands.get('player').execute(msg, args)
     }
     
     if (cmd === 'item'){
-      bot.commands.get('item').execute(Discord, msg)
+      bot.commands.get('item').execute(msg)
     }
     if (cmd === 'clear'){
       bot.commands.get('clear').execute(msg)

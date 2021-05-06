@@ -1,0 +1,20 @@
+{
+    "707162228595621988": {
+        "id": 707162228595621988,
+        "name": "BuhaiStrikalo",
+        "level": 60,
+        "pvp": 1300,
+        "pve_raid": 4,
+        "pve_dung": 0,
+        "guild": "Blacklist"
+    },
+    "385104077077479426": {
+        "id": 385104077077479426,
+        "name": "Данила - убийца",
+        "level": 22,
+        "pvp": 500,
+        "pve_raid": 0,
+        "pve_dung": 0,
+        "guild": "Blacklist"
+    }
+}
