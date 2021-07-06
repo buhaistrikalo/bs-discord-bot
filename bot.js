@@ -15,6 +15,8 @@ for(const file of commandFiles){
 
  bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);
+    bot.user.setActivity('GUN RPG 1.14.1', { type: 'PLAYING' }) //PLAYING: WATCHING: LISTENING: STREAMING:
+      .catch(console.error);
   });
   
   bot.on('message', msg => {
