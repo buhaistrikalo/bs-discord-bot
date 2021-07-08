@@ -34,8 +34,6 @@ module.exports = {
       }
       const channel = await message.guild.channels.create(`${message.author.tag}`);
       
-      
-
       channel.setParent(TicketChannels);
   
       channel.updateOverwrite(message.guild.id, {
