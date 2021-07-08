@@ -5,8 +5,10 @@ require("dotenv").config()
 const client = new DiscordJS.Client()
 const guildId = '825671978844553246'
 
-client.on('ready', () => {
+
+client.on('ready',async () => {
     console.log(`Logged in as ${client.user.tag}!`)
+
     new WOKCommands(client, {
         commandsDir: 'commands',
         testServers: [guildId],
