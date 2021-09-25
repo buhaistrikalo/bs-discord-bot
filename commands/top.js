@@ -15,9 +15,11 @@ module.exports = {
         let text = {}
         let place = 0
         for (let player in file) {
-            place++
-            let pl = file[player]
-            embed.addField(`#${place} ${pl.name}`, `Level: ${pl.level} \nPrestige: ${pl.prestige}`)
+            if (place < 10) {
+                place++
+                let pl = file[player]
+                embed.addField(`#${place} ${pl.name}`, `Level: ${pl.level} \nPrestige: ${pl.prestige}`)
+            }
         }
         if (message)  {
             message.reply('pong')
