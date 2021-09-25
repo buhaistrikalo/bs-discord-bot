@@ -8,5 +8,5 @@ export default {
     callback: ({message}) => {
         message.reply('lol')
     },
-} as ICommand
+}
 
