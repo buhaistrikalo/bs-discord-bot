@@ -1,5 +1,6 @@
 const DiscordJS = require("discord.js")
 const WOKCommands = require('wokcommands')
+const path = require('path')
 require("dotenv").config()
 
 const client = new DiscordJS.Client()
@@ -10,9 +11,7 @@ client.on('ready', async () => {
     console.log(`Logged in as ${client.user.tag}!`)
 
     new WOKCommands(client, {
-        commandsDir: 'commands',
-        testServers: [guildId],
-        showWarns: false,
+        commandsDir: path.join(__dirname, 'commands'),
     })
     console.log(`${client.user.tag} ready for work`)
 })
