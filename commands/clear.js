@@ -1,12 +1,13 @@
-const {ICommand} = require('wokcommands')
-
-export default {
+module.exports = {
+    name: 'Clear chat',
+    permissions: ['ADMINISTRATOR'],
     category: 'test',
-    description: 'clean chat',
+    description: 'clear chat',
     slash: true,
     testOnly: true,
-    callback: ({message}) => {
-        message.reply('lol')
+    callback: ({channel}) => {
+        console.log('Used clear command')
+        return
     },
 }
 
